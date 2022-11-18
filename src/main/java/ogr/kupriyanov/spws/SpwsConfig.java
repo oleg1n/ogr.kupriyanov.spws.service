@@ -6,7 +6,6 @@ import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 import javax.xml.ws.Endpoint;
 
@@ -18,7 +17,7 @@ public class SpwsConfig {
     @Bean
     public Endpoint myEndpoint (){
         EndpointImpl endpoint = new EndpointImpl(bus, new SoapWebServiceImpl());
-        endpoint.publish("/ServiceSoapWebService");
+        endpoint.publish("/SoapWebService");
         return endpoint;
     }
 }

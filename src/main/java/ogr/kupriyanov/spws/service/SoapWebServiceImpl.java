@@ -13,7 +13,7 @@ import java.util.List;
 @WebService(name = "SoapWebService",
             portName = "MyPort",
             targetNamespace = "",
-            endpointInterface = "ogr.kupriyanov.spws.SoapWebService")
+            endpointInterface = "ogr.kupriyanov.spws.service.SoapWebService")
 public class SoapWebServiceImpl implements SoapWebService{
     @Autowired
     private UserService userService;
