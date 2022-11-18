@@ -4,12 +4,25 @@ import ogr.kupriyanov.spws.entity.User;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
 import java.util.List;
 
-@WebService
+@WebService(targetNamespace = "",
+            name = "SoapWebService")
 public interface SoapWebService {
-    @WebMethod
+    @WebResult(name = "return", targetNamespace = "")
+    @RequestWrapper(
+            localName = "getAllUsers",
+            targetNamespace = "",
+            className = "ogr.kupriyanov.spws.service.RequestGetAllUsers")
+    @WebMethod(action = "urn:GetAllUsers")
+    @ResponseWrapper(
+            localName = "getAllUsersResponse",
+            targetNamespace = "",
+            className = "ogr.kupriyanov.spws.service.GetAllUsersResponse")
     List<User> getAllUsers();
 
     @WebMethod

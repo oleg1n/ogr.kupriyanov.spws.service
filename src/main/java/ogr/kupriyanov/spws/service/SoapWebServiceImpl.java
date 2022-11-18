@@ -7,9 +7,13 @@ import ogr.kupriyanov.spws.utils.FormatLogicalControlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
-@Component
+@WebService(name = "SoapWebService",
+            portName = "MyPort",
+            targetNamespace = "",
+            endpointInterface = "ogr.kupriyanov.spws.SoapWebService")
 public class SoapWebServiceImpl implements SoapWebService{
     @Autowired
     private UserService userService;
