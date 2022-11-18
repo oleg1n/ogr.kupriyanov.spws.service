@@ -3,7 +3,6 @@ package ogr.kupriyanov.spws.utils;
 import ogr.kupriyanov.spws.exception.IncorrectParamNewUserException;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 @Component
 public class FormatLogicalControlUtil {
 

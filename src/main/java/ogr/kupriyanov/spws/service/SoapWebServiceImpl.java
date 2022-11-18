@@ -5,6 +5,7 @@ import ogr.kupriyanov.spws.entity.User;
 import ogr.kupriyanov.spws.exception.IncorrectParamNewUserException;
 import ogr.kupriyanov.spws.utils.FormatLogicalControlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebService;
@@ -14,6 +15,7 @@ import java.util.List;
             portName = "MyPort",
             targetNamespace = "",
             endpointInterface = "ogr.kupriyanov.spws.service.SoapWebService")
+@Component
 public class SoapWebServiceImpl implements SoapWebService{
     @Autowired
     private UserService userService;
