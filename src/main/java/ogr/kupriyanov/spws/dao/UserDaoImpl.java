@@ -54,7 +54,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean delete(User user) {
+    public boolean delete(String login) {
+        User user = findByLogin(login);
         if (user == null){
             return false;
         }

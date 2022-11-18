@@ -13,5 +13,5 @@ public interface UserDao {
 
     boolean update(User user);
 
-    boolean delete(User user);
+    boolean delete(String login);
 }
