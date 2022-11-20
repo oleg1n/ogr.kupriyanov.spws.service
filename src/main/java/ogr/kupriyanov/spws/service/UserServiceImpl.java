@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Component
 public class UserServiceImpl implements UserService {
-    @Autowired
-    UserDao userDao;
+
+    private UserDao userDao;
 
     public UserServiceImpl() {
     }
@@ -38,5 +38,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean deleteUser(String login) {
         return userDao.delete(login);
+    }
+
+    @Autowired
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 }

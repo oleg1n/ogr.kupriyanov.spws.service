@@ -15,11 +15,10 @@ import java.util.List;
             portName = "MyPort",
             targetNamespace = "",
             endpointInterface = "ogr.kupriyanov.spws.service.SoapWebService")
-@Component
 public class SoapWebServiceImpl implements SoapWebService{
-    @Autowired
+
     private UserService userService;
-    @Autowired
+
     private FormatLogicalControlUtil formatLogicalControlUtil;
 
     @Override
@@ -84,5 +83,14 @@ public class SoapWebServiceImpl implements SoapWebService{
     @Override
     public boolean deleteUser(String login) {
         return userService.deleteUser(login);
+    }
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+    @Autowired
+    public void setFormatLogicalControlUtil(FormatLogicalControlUtil formatLogicalControlUtil) {
+        this.formatLogicalControlUtil = formatLogicalControlUtil;
     }
 }
